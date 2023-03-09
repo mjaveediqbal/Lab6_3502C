@@ -21,6 +21,26 @@ def encode(password):
 
     return new_password
 
+# encodes the password given in the input
+def decode(password):
+    dec_pass = ""
+    for x in password:
+        # decodes the password
+        dec_pass = dec_pass + str((int(x) - 3) % 10)
+    # returns encoded password
+    return dec_pass
+
+
+# Sophya Wodchis
+def decode(password):
+	dec_pass = ""
+	for x in password:
+		# decodes by subtracting three from each integer
+		dec_pass += str((int(x) - 3) % 10)
+	# return statement
+	return dec_pass
+
+
 #Prints menu options
 def menu_print():
     print(
@@ -44,17 +64,18 @@ def main():
 
         menu_option=int(input("Please enter an option: "))
 
-        if menu_option==1:
+        if menu_option == 1:
             #Stores encoded password 
             password=input("Please enter your password to encode: ")
-            new_password=encode(password)
+            new_password = encode(password)
             print("Your password has been encoded and stored!")
         #Checks if there was a encoded password, and if so, prints out encoded password and decoded password
-        if menu_option==2:
-            if new_password==0:
+        if menu_option == 2:
+            if new_password == 0:
                 print("No password has been encoded yet")
+	    # prints the encoded password and the decoded password
             else:
-                print(f"The encoded password is {new_password}, and the original password is .")#add decode function
+                print(f"The encoded password is {new_password}, and the original password is {decode(new_password)}.")
 
 if __name__=='__main__':
     main()
