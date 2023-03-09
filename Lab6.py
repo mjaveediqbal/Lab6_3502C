@@ -21,6 +21,7 @@ def encode(password):
 
     return new_password
 
+# Sophya Wodchis
 # encodes the password given in the input
 def decode(password):
     dec_pass = ""
@@ -29,16 +30,6 @@ def decode(password):
         dec_pass = dec_pass + str((int(x) - 3) % 10)
     # returns encoded password
     return dec_pass
-
-
-# Sophya Wodchis
-def decode(password):
-	dec_pass = ""
-	for x in password:
-		# decodes by subtracting three from each integer
-		dec_pass += str((int(x) - 3) % 10)
-	# return statement
-	return dec_pass
 
 
 #Prints menu options
